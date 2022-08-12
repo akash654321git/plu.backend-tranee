@@ -1,49 +1,60 @@
 const express = require('express');
 const router = express.Router();
 
+let persons =[
+    {
+        name: "nand kumar ",
+        age :29,
+        votingstatus:false
 
+    },
+    {
+        name: "sandip gupta",
+        age :17,
+        votingstatus:false
 
-let players =
-   [
-       {
-           "name": "manish",
-           "dob": "1/1/1995",
-           "gender": "male",
-           "city": "jalandhar",
-           "sports": [
-               "swimming"
-           ]
-       },
-       {
-           "name": "gopal",
-           "dob": "1/09/1995",
-           "gender": "male",
-           "city": "delhi",
-           "sports": [
-               "soccer"
-           ],
-       },
-       {
-           "name": "lokesh",
-           "dob": "1/1/1990",
-           "gender": "male",
-           "city": "mumbai",
-           "sports": [
-               "soccer"
-           ],
-       },
-   ]
+    },
+    {
+        name: "arindam dan",
+        age :15,
+        votingstatus:false
 
-   router.post('/playersall', function (req, res) {
-    let lastplayer = req.body;
-       //LOGIC WILL COME HERE
-       for(let allplay of players){
-        if(allplay.name ===lastplayer.name){
-             res.json("this player is already exist")
-        }
-       }
-       players.push(lastplayer)
-       res.json( players);
-   })
-  
-module.exports = router;
+    },
+    {
+        name: "bikas mallik",
+        age :55,
+        votingstatus:false
+
+    },
+    {
+        name: "pankaj singh",
+        age :48,
+        votingstatus:false
+
+    },
+    {
+        name: "pintu sharma",
+        age :36,
+        votingstatus:false
+
+    }
+]
+router.post('/anothervoter', function (req, res) {
+    let emptyarray = [];
+    
+        let voteage = req.query.age;
+           //LOGIC WILL COME HERE
+           for( let person1 of persons){
+             if(person1.age>voteage){
+                person1.votingstatus = true;
+                emptyarray.push(person1)
+
+             }
+            
+           }
+    
+    //        players.push(lastplayer)
+           res.json(emptyarray);
+       })
+    
+ module.exports = router;
