@@ -16,9 +16,22 @@ const basicCode= async function(req, res) {
 const commonHandler = async function(req, res, next) {
     console.log('I am inside the common route handler')
     next()
+
+    
     //res.send({status: true, msg: "Hi there!"})
 }
 
+const mycode = async function(req, res, next){
+    let mydata= req.body
+    console.log(mydata)
+  
+    next()
+    // res.send(mydata)
+   
+}
+
+
+module.exports.mycode = mycode
 module.exports.commonHandler = commonHandler
 
 

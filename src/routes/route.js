@@ -21,36 +21,38 @@ router.post("/createBook", BookController.createBook  )
 // router.get("/getUsersData", UserController.getUsersData)
 
 
-const mid1= function ( req, res, next) {
-    console.log ("inside GLOBAL MW");
-    console.log("Hi I am a middleware named Mid1")
-    // logic
-    let loggedIn = false
+// const mid1= function ( req, res, next) {
+//     console.log ("inside GLOBAL MW");
+//     console.log("Hi I am a middleware named Mid1")
+//     // logic
+//     let loggedIn = false
 
-    if (loggedIn== true) { 
-        console.log( "OK LOGGED IS IS TRUE NOW")
-        next ()
-    }
-    else {
-        res.send ("Please login or register")
-    }
-}
+//     if (loggedIn== true) { 
+//         console.log( "OK LOGGED IS IS TRUE NOW")
+//         next ()
+//     }
+//     else {
+//         res.send ("Please login or register")
+//     }
+// }
 
 /*
 
 */
+router.post('/mycode',UserController.mycode)
+
 
 // e.g. restricted and open-to-all API's can be handled like below now:
-router.get('/homePage', mid1, UserController.commonHandler)
-router.get('/profileDetails', mid1, UserController.commonHandler)
-router.get('/friendList', mid1, UserController.commonHandler)
-router.get('/changePassword', mid1, UserController.commonHandler)
+// router.get('/homePage', mid1, UserController.commonHandler)
+// router.get('/profileDetails', mid1, UserController.commonHandler)
+// router.get('/friendList', mid1, UserController.commonHandler)
+// router.get('/changePassword', mid1, UserController.commonHandler)
 
-router.get('/termsAndConditions',  UserController.commonHandler)
-router.get('/register',  UserController.commonHandler, function(req, res){
-    console.log('This is last console statement')
-    res.send({status: true, msg: "Am ending the cycle."})
-})
+// router.get('/termsAndConditions',  UserController.commonHandler)
+// router.get('/register',  UserController.commonHandler, function(req, res){
+//     console.log('This is last console statement')
+//     res.send({status: true, msg: "Am ending the cycle."})
+// })
 
 
 
