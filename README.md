@@ -8,8 +8,8 @@
 Think of this like getting an ID card the first day of your college and then showing that to a guard seated outside your college's campus gate in future. By showing them this token you are confirming your identity to them. Only a legitimate(valid) student who has taken the admission can own an official ID card.
 
 ## Assignment
-- For this assignment you have to create a new branch - assignment/auth-1
-- Your user document should look like this
+- For this assignment you have to create a new branch - assignment/auth-1our user document should look like this
+- Y
 ```
  	{
     "_id" : ObjectId("6226e3d2b98f22b349ca58be"),
